@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 29-Aug-2017 10:13:17 AM by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="travelexperts" dynamic-insert="false" dynamic-update="false" mutable="true" name="CustomersRewards" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="customers_rewards">
+        <composite-id class="CustomersRewardsId" mapped="false" name="id" unsaved-value="undefined">
+            <key-property name="customerId" type="int">
+                <column name="CustomerId"/>
+            </key-property>
+            <key-property name="rewardId" type="int">
+                <column name="RewardId"/>
+            </key-property>
+        </composite-id>
+        <property generated="never" lazy="false" name="rwdNumber" optimistic-lock="true" type="string" unique="false">
+            <column length="25" name="RwdNumber" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

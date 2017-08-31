@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 29-Aug-2017 10:13:17 AM by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="travelexperts" dynamic-insert="false" dynamic-update="false" mutable="true" name="Agencies" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="agencies">
+        <id name="agencyId" type="java.lang.Integer">
+            <column name="AgencyId"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="agncyAddress" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="AgncyAddress"/>
+        </property>
+        <property generated="never" lazy="false" name="agncyCity" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="AgncyCity"/>
+        </property>
+        <property generated="never" lazy="false" name="agncyProv" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="AgncyProv"/>
+        </property>
+        <property generated="never" lazy="false" name="agncyPostal" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="AgncyPostal"/>
+        </property>
+        <property generated="never" lazy="false" name="agncyCountry" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="AgncyCountry"/>
+        </property>
+        <property generated="never" lazy="false" name="agncyPhone" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="AgncyPhone"/>
+        </property>
+        <property generated="never" lazy="false" name="agncyFax" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="AgncyFax"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 29-Aug-2017 10:13:17 AM by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="travelexperts" dynamic-insert="false" dynamic-update="false" mutable="true" name="ProductsSuppliers" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="products_suppliers">
+        <id name="productSupplierId" type="java.lang.Integer">
+            <column name="ProductSupplierId"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="productId" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="ProductId"/>
+        </property>
+        <property generated="never" lazy="false" name="supplierId" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="SupplierId"/>
+        </property>
+    </class>
+</hibernate-mapping>
