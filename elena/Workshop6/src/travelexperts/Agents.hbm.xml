@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 29-Aug-2017 10:13:17 AM by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="travelexperts" dynamic-insert="false" dynamic-update="false" mutable="true" name="Agents" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="agents">
+        <id name="agentId" type="java.lang.Integer">
+            <column name="AgentId"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="agtFirstName" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="AgtFirstName"/>
+        </property>
+        <property generated="never" lazy="false" name="agtMiddleInitial" optimistic-lock="true" type="string" unique="false">
+            <column length="5" name="AgtMiddleInitial"/>
+        </property>
+        <property generated="never" lazy="false" name="agtLastName" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="AgtLastName"/>
+        </property>
+        <property generated="never" lazy="false" name="agtBusPhone" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="AgtBusPhone"/>
+        </property>
+        <property generated="never" lazy="false" name="agtEmail" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="AgtEmail"/>
+        </property>
+        <property generated="never" lazy="false" name="agtPosition" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="AgtPosition"/>
+        </property>
+        <property generated="never" lazy="false" name="agencyId" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="AgencyId"/>
+        </property>
+    </class>
+</hibernate-mapping>

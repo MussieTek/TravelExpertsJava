@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 29-Aug-2017 10:13:17 AM by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="travelexperts" dynamic-insert="false" dynamic-update="false" mutable="true" name="Packages" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="packages">
+        <id name="packageId" type="java.lang.Integer">
+            <column name="PackageId"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="pkgName" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="PkgName" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="pkgStartDate" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="19" name="PkgStartDate"/>
+        </property>
+        <property generated="never" lazy="false" name="pkgEndDate" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="19" name="PkgEndDate"/>
+        </property>
+        <property generated="never" lazy="false" name="pkgDesc" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="PkgDesc"/>
+        </property>
+        <property generated="never" lazy="false" name="pkgBasePrice" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="PkgBasePrice" not-null="true" scale="4"/>
+        </property>
+        <property generated="never" lazy="false" name="pkgAgencyCommission" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="PkgAgencyCommission" scale="4"/>
+        </property>
+    </class>
+</hibernate-mapping>

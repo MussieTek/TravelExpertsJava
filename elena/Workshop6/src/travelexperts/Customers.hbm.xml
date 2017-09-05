@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 29-Aug-2017 10:13:17 AM by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="travelexperts" dynamic-insert="false" dynamic-update="false" mutable="true" name="Customers" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="customers">
+        <id name="customerId" type="java.lang.Integer">
+            <column name="CustomerId"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="custFirstName" optimistic-lock="true" type="string" unique="false">
+            <column length="25" name="CustFirstName" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="custLastName" optimistic-lock="true" type="string" unique="false">
+            <column length="25" name="CustLastName" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="custAddress" optimistic-lock="true" type="string" unique="false">
+            <column length="75" name="CustAddress" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="custCity" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="CustCity" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="custProv" optimistic-lock="true" type="string" unique="false">
+            <column length="2" name="CustProv" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="custPostal" optimistic-lock="true" type="string" unique="false">
+            <column length="7" name="CustPostal" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="custCountry" optimistic-lock="true" type="string" unique="false">
+            <column length="25" name="CustCountry"/>
+        </property>
+        <property generated="never" lazy="false" name="custHomePhone" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="CustHomePhone"/>
+        </property>
+        <property generated="never" lazy="false" name="custBusPhone" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="CustBusPhone" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="custEmail" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="CustEmail" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="agentId" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="AgentId"/>
+        </property>
+    </class>
+</hibernate-mapping>

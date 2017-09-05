@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 29-Aug-2017 10:13:17 AM by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="travelexperts" dynamic-insert="false" dynamic-update="false" mutable="true" name="Bookings" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="bookings">
+        <id name="bookingId" type="java.lang.Integer">
+            <column name="BookingId"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="bookingDate" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="19" name="BookingDate"/>
+        </property>
+        <property generated="never" lazy="false" name="bookingNo" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="BookingNo"/>
+        </property>
+        <property generated="never" lazy="false" name="travelerCount" optimistic-lock="true" type="java.lang.Double" unique="false">
+            <column name="TravelerCount" precision="22" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="customerId" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="CustomerId"/>
+        </property>
+        <property generated="never" lazy="false" name="tripTypeId" optimistic-lock="true" type="string" unique="false">
+            <column length="1" name="TripTypeId"/>
+        </property>
+        <property generated="never" lazy="false" name="packageId" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="PackageId"/>
+        </property>
+    </class>
+</hibernate-mapping>

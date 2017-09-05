@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 29-Aug-2017 10:13:17 AM by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="travelexperts" dynamic-insert="false" dynamic-update="false" mutable="true" name="Suppliercontacts" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="suppliercontacts">
+        <id name="supplierContactId" type="int">
+            <column name="SupplierContactId"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="supConFirstName" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="SupConFirstName"/>
+        </property>
+        <property generated="never" lazy="false" name="supConLastName" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="SupConLastName"/>
+        </property>
+        <property generated="never" lazy="false" name="supConCompany" optimistic-lock="true" type="string" unique="false">
+            <column length="65535" name="SupConCompany"/>
+        </property>
+        <property generated="never" lazy="false" name="supConAddress" optimistic-lock="true" type="string" unique="false">
+            <column length="65535" name="SupConAddress"/>
+        </property>
+        <property generated="never" lazy="false" name="supConCity" optimistic-lock="true" type="string" unique="false">
+            <column length="65535" name="SupConCity"/>
+        </property>
+        <property generated="never" lazy="false" name="supConProv" optimistic-lock="true" type="string" unique="false">
+            <column length="65535" name="SupConProv"/>
+        </property>
+        <property generated="never" lazy="false" name="supConPostal" optimistic-lock="true" type="string" unique="false">
+            <column length="65535" name="SupConPostal"/>
+        </property>
+        <property generated="never" lazy="false" name="supConCountry" optimistic-lock="true" type="string" unique="false">
+            <column length="65535" name="SupConCountry"/>
+        </property>
+        <property generated="never" lazy="false" name="supConBusPhone" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="SupConBusPhone"/>
+        </property>
+        <property generated="never" lazy="false" name="supConFax" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="SupConFax"/>
+        </property>
+        <property generated="never" lazy="false" name="supConEmail" optimistic-lock="true" type="string" unique="false">
+            <column length="65535" name="SupConEmail"/>
+        </property>
+        <property generated="never" lazy="false" name="supConUrl" optimistic-lock="true" type="string" unique="false">
+            <column length="65535" name="SupConURL"/>
+        </property>
+        <property generated="never" lazy="false" name="affiliationId" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="AffiliationId"/>
+        </property>
+        <property generated="never" lazy="false" name="supplierId" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="SupplierId"/>
+        </property>
+    </class>
+</hibernate-mapping>

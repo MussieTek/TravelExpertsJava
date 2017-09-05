@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 29-Aug-2017 10:13:17 AM by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="travelexperts" dynamic-insert="false" dynamic-update="false" mutable="true" name="Triptypes" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="triptypes">
+        <id name="tripTypeId" type="string">
+            <column length="1" name="TripTypeId"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="ttname" optimistic-lock="true" type="string" unique="false">
+            <column length="25" name="TTName"/>
+        </property>
+    </class>
+</hibernate-mapping>

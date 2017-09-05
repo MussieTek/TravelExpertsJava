@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 29-Aug-2017 10:13:17 AM by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="travelexperts" dynamic-insert="false" dynamic-update="false" mutable="true" name="Bookingdetails" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="bookingdetails">
+        <id name="bookingDetailId" type="java.lang.Integer">
+            <column name="BookingDetailId"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="itineraryNo" optimistic-lock="true" type="java.lang.Double" unique="false">
+            <column name="ItineraryNo" precision="22" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="tripStart" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="19" name="TripStart"/>
+        </property>
+        <property generated="never" lazy="false" name="tripEnd" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="19" name="TripEnd"/>
+        </property>
+        <property generated="never" lazy="false" name="description" optimistic-lock="true" type="string" unique="false">
+            <column length="65535" name="Description"/>
+        </property>
+        <property generated="never" lazy="false" name="destination" optimistic-lock="true" type="string" unique="false">
+            <column length="65535" name="Destination"/>
+        </property>
+        <property generated="never" lazy="false" name="basePrice" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="BasePrice" scale="4"/>
+        </property>
+        <property generated="never" lazy="false" name="agencyCommission" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="AgencyCommission" scale="4"/>
+        </property>
+        <property generated="never" lazy="false" name="bookingId" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="BookingId"/>
+        </property>
+        <property generated="never" lazy="false" name="regionId" optimistic-lock="true" type="string" unique="false">
+            <column length="5" name="RegionId"/>
+        </property>
+        <property generated="never" lazy="false" name="classId" optimistic-lock="true" type="string" unique="false">
+            <column length="5" name="ClassId"/>
+        </property>
+        <property generated="never" lazy="false" name="feeId" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="FeeId"/>
+        </property>
+        <property generated="never" lazy="false" name="productSupplierId" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="ProductSupplierId"/>
+        </property>
+    </class>
+</hibernate-mapping>
