@@ -1,3 +1,5 @@
+package workshop6.travelexperts;
+
 // default package
 // Generated 29-Aug-2017 10:13:16 AM by Hibernate Tools 5.2.5.Final
 

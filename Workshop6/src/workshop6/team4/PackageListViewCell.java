@@ -1,7 +1,7 @@
-package workshop6.team4;
+package team4;
 
 import javafx.scene.control.ListCell;
-import workshop6.travelexperts.*;
+import travelexperts.*;
 
 public class PackageListViewCell extends ListCell<Packages> {
 	
@@ -14,7 +14,7 @@ public class PackageListViewCell extends ListCell<Packages> {
 			
 		}
 		else {
-			setText(pkg.getPkgName());
+			setText(pkg.toString());
 		}
 	}
 
