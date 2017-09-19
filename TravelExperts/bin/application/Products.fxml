@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ProductsController">
+   <top>
+      <MenuBar fx:id="fxmenubar" prefHeight="30.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu fx:id="fxDashboard" mnemonicParsing="false" text="Dashboard">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openDashboard" text="Open Dashboard" />
+               </items>
+          </Menu>
+          <Menu fx:id="fxPackage" mnemonicParsing="false" text="Package">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openPackage" text="Open Package" />
+               </items>
+          </Menu>
+          <Menu fx:id="fxSupplier" mnemonicParsing="false" text="Supplier">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openSupplier" text="Open Supplier" />
+               </items>
+          </Menu>
+            <Menu fx:id="fxProduct" mnemonicParsing="false" text="Product">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openProduct" text="Open Product" />
+               </items>
+            </Menu>
+            <Menu fx:id="fxBooking" mnemonicParsing="false" text="Booking">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openBooking" text="Open Booking" />
+               </items>
+            </Menu>
+            <Menu fx:id="fxCustomer" mnemonicParsing="false" text="Customer">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openCustomer" text="Open Customer" />
+               </items>
+            </Menu>
+            <Menu fx:id="fxSendPromo" mnemonicParsing="false" text="Send Promotion">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openSendPromo" text="Open Send Promotion" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="34.0" prefWidth="600.0" text="Products Management">
+               <font>
+                  <Font name="Arial Bold" size="24.0" />
+               </font>
+            </Label>
+            <SplitPane dividerPositions="0.362876254180602" prefHeight="336.0" prefWidth="600.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <ListView fx:id="lvProducts" layoutX="-1.0" layoutY="1.0" onMouseClicked="#selectProduct" prefHeight="335.0" prefWidth="216.0" />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="-1.0" prefHeight="45.0" prefWidth="381.0" text="Product Detail">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="56.0" layoutY="60.0" text="Product ID">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="56.0" layoutY="99.0" text="Product Name">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="fxProductId" editable="false" layoutX="161.0" layoutY="56.0">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="fxProductName" editable="false" layoutX="161.0" layoutY="94.0" prefHeight="26.0" prefWidth="178.0">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="btnAdd" layoutX="14.0" layoutY="177.0" mnemonicParsing="false" onAction="#onAddProduct" prefHeight="26.0" prefWidth="108.0" text="Add Product">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnEdit" layoutX="246.0" layoutY="177.0" mnemonicParsing="false" onAction="#onEditProduct" prefHeight="26.0" prefWidth="103.0" text="Edit">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnAddSave" layoutX="14.0" layoutY="177.0" mnemonicParsing="false" onAction="#insertProduct" prefHeight="25.0" prefWidth="108.0" text="Save">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnSaveEdit" layoutX="246.0" layoutY="177.0" mnemonicParsing="false" onAction="#updateProduct" prefHeight="26.0" prefWidth="103.0" text="Save">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnDelete" layoutX="131.0" layoutY="177.0" mnemonicParsing="false" onAction="#deleteProduct" prefHeight="26.0" prefWidth="100.0" text="Delete">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="fxmsg" layoutX="161.0" layoutY="127.0" textFill="#e80e0e">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

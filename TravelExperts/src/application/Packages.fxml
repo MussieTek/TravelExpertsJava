@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="404.0" prefWidth="517.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PackagesController">
+   <top>
+      <MenuBar fx:id="fxmenubar" prefHeight="30.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu fx:id="fxDashboard" mnemonicParsing="false" text="Dashboard">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openDashboard" text="Open Dashboard" />
+               </items>
+          </Menu>
+          <Menu fx:id="fxPackage" mnemonicParsing="false" text="Package">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openPackage" text="Open Package" />
+               </items>
+          </Menu>
+          <Menu fx:id="fxSupplier" mnemonicParsing="false" text="Supplier">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openSupplier" text="Open Supplier" />
+               </items>
+          </Menu>
+            <Menu fx:id="fxProduct" mnemonicParsing="false" text="Product">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openProduct" text="Open Product" />
+               </items>
+            </Menu>
+            <Menu fx:id="fxBooking" mnemonicParsing="false" text="Booking">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openBooking" text="Open Booking" />
+               </items>
+            </Menu>
+            <Menu fx:id="fxCustomer" mnemonicParsing="false" text="Customer">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openCustomer" text="Open Customer" />
+               </items>
+            </Menu>
+            <Menu fx:id="fxSendPromo" mnemonicParsing="false" text="Send Promotion">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openSendPromo" text="Open Send Promotion" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="41.0" prefWidth="517.0" text="Package List">
+               <font>
+                  <Font name="Arial Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
