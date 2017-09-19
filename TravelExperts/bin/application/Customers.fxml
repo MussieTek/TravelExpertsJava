@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="529.0" prefWidth="649.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CustomersController">
+   <top>
+      <MenuBar fx:id="fxmenubar" prefHeight="30.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu fx:id="fxDashboard" mnemonicParsing="false" text="Dashboard">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openDashboard" text="Open" />
+               </items>
+          </Menu>
+          <Menu fx:id="fxPackage" mnemonicParsing="false" text="Package">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openPackage" text="Open Package" />
+               </items>
+          </Menu>
+          <Menu fx:id="fxSupplier" mnemonicParsing="false" text="Supplier">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openSupplier" text="Open Supplier" />
+               </items>
+          </Menu>
+            <Menu fx:id="fxProduct" mnemonicParsing="false" text="Product">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openProduct" text="Open Product" />
+               </items>
+            </Menu>
+            <Menu fx:id="fxBooking" mnemonicParsing="false" text="Booking">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openBooking" text="Open Booking" />
+               </items>
+            </Menu>
+            <Menu fx:id="fxCustomer" mnemonicParsing="false" text="Customer">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openCustomer" text="Open Customer" />
+               </items>
+            </Menu>
+            <Menu fx:id="fxSendPromo" mnemonicParsing="false" text="Send Promotion">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openSendPromo" text="Open Send Promotion" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="63.0" prefWidth="649.0" text="Customer List" textFill="#910a0a">
+               <font>
+                  <Font name="Arial Bold" size="24.0" />
+               </font>
+            </Label>
+            <TableView fx:id="custLists" prefHeight="442.0" prefWidth="517.0">
+              <columns>
+                <TableColumn fx:id="custName" editable="false" prefWidth="117.0" text="Customer Name" />
+                <TableColumn fx:id="custEmail" editable="false" prefWidth="93.0" text="Email" />
+                  <TableColumn fx:id="custPhone" editable="false" prefWidth="112.0" text="Home Phone" />
+                  <TableColumn fx:id="custCity" editable="false" prefWidth="122.0" text="City" />
+                  <TableColumn fx:id="sendEmail" editable="true" prefWidth="113.0" text="Action" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
