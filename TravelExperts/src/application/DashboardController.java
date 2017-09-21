@@ -124,7 +124,7 @@ public class DashboardController {
 
     @FXML
     void openSendPromo(MouseEvent event) {
-    	// close dashboard window
+    	// close dash board window
     	Stage main = (Stage) fxSendPromo.getScene().getWindow();
         main.close();
 		try {         		

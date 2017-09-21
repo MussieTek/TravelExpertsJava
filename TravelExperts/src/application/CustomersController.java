@@ -7,10 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-import com.mysql.jdbc.Statement;
+//import com.mysql.jdbc.Statement;
 
 import Models.DBConnection;
-import Models.CustomerDB;
 import Models.Customer;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
