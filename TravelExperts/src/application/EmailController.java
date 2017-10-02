@@ -22,10 +22,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.web.HTMLEditor;
 import javafx.stage.Stage;
+
+import java.awt.Window;
+import javafx.scene.control.Button;
+
 import Models.*;
 import Models.Package;
 
@@ -88,9 +94,15 @@ public class EmailController implements Initializable {
 
     @FXML
     private Color x4;
+    
+    @FXML
+    private Button btnTo;
 
     @FXML
     private Label rStatus;
+    
+    @FXML
+    private static ImageView fxCustomers;
     
     //-------------------------Basic menu code
     
@@ -286,13 +298,34 @@ public class EmailController implements Initializable {
         System.out.println(body);
         // send confirmation
     }
+    
+    @FXML
+    void getEmails(MouseEvent event) {
+    	openCustomers(event);
+    	
+    	
+    }
+//    
+    void openCustomers(MouseEvent event) {
+   	 // close dashboard window
+   	//Stage main = (Stage) btnTo.getScene().getWindow();
+       //main.close();
+       
+   	try {      
+   		
+	       FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Customers.fxml"));
+           Parent cust = (Parent) fxmlLoader.load();
+           Stage stage = new Stage();
+           stage.setScene(new Scene(cust));  
+           stage.show();
+                              
+       } catch(Exception e) {
+          e.printStackTrace();
+       }
+   }
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        // TODO Auto-generated method stub
-        //
-        // *********Fill in Template drop down**********
-
         ObservableList<String> templateList = FXCollections.observableArrayList();
 
         //get the templates from the directory
@@ -307,10 +340,7 @@ public class EmailController implements Initializable {
 
         cbTemplates.setItems(templateList);
 
-        //************ Fill in Package list with Package *****************
-        // get List of Package
-        PackageDB pkgDB = new PackageDB();
-        ArrayList<Package> p = pkgDB.getPackages(); // placeholder for get method
+        ArrayList<Package> p = PackageDB.getPackages(); // placeholder for get method
         ObservableList<Package> observablePackage = FXCollections.observableArrayList(p);
 
         lvPackage.setItems(observablePackage);
@@ -357,5 +387,7 @@ public class EmailController implements Initializable {
 
         return newTemplate;
     }
+    
+
 }
 
