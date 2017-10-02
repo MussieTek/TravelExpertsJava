@@ -56,7 +56,7 @@ public class LoginController {
     	if (tfUsername.getText().isEmpty()) userName = "";
     	else userName = tfUsername.getText();
     	
-    	if (!tfPassword.getText().isEmpty()) password = "";
+    	if (tfPassword.getText().isEmpty()) password = "";
     	else password = tfPassword.getText();
     	
     	if(userName.equals("") || VerifyLogin(userName, password)) {

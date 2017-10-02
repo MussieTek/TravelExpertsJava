@@ -41,6 +41,11 @@
                         <Font name="Arial" size="18.0" />
                      </font>
                   </TextField>
+                  <PasswordField fx:id="tfPassword" layoutX="7.0" layoutY="95.0">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </PasswordField>
                   <Button fx:id="btnLogin" layoutX="7.0" layoutY="162.0" mnemonicParsing="false" onAction="#doLogin" text="Login">
                      <font>
                         <Font name="Arial" size="18.0" />
@@ -51,11 +56,6 @@
                         <Font name="Arial" size="14.0" />
                      </font>
                   </Button>
-                  <PasswordField fx:id="tfPassword" layoutX="7.0" layoutY="95.0">
-                     <font>
-                        <Font name="Arial" size="18.0" />
-                     </font>
-                  </PasswordField>
                </children>
             </AnchorPane>
         </items>
