@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="529.0" prefWidth="649.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CustomerEmailsController">
+
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="63.0" prefWidth="649.0" text="Customer List" textFill="#910a0a">
+               <font>
+                  <Font name="Arial Bold" size="24.0" />
+               </font>
+            </Label>
+            <TableView fx:id="custLists" prefHeight="416.0" prefWidth="649.0">
+              <columns>
+                <TableColumn fx:id="firstNameCol" editable="false" prefWidth="117.0" text="Customer Name" />
+                <TableColumn fx:id="lastNameCol" editable="false" prefWidth="117.0" text="Customer Name" />
+                 <TableColumn fx:id="cityCol" editable="false" prefWidth="117.0" text="City" />
+                <TableColumn fx:id="emailCol" editable="false" prefWidth="93.0" text="Email" />
+                  <TableColumn fx:id="selectedCol" editable="true" prefWidth="113.0" sortable="false" text="Send Email" />
+              </columns>
+            </TableView>
+            <Button fx:id="btnSelect" mnemonicParsing="false" onAction="#addToEmails" text="Select Customers and Add" textAlignment="CENTER" translateX="10.0" translateY="10.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

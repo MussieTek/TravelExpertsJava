@@ -12,6 +12,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import Models.Customer;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class CustomerDB {
 	
@@ -74,6 +77,52 @@ public class CustomerDB {
 		}
 		return null;
 	}
+	
+	public static ObservableList<Customer> getObservableCustomers()
+	{
+		String sql = "SELECT  "
+							+ "CustFirstName, "
+							+ "CustLastName, "
+							+ "CustCity, "
+							+ "CustProv, "
+							+ "CustEmail "
+							+ "FROM customers";
+		
+		ObservableList<Customer> customers = FXCollections.observableArrayList();
+		
+		try 
+			(Connection conn = new DBConnection().getConnection();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery())
+		{
+			while(rs.next())
+			{
+				String custFirstName = rs.getString("CustFirstName");
+				String custLastName = rs.getString("CustLastName");
+				String custCity = rs.getString("CustCity");
+				String custProv = rs.getString("CustProv");
+				String custEmail = rs.getString("CustEmail");
+				Boolean bool = false;
+						
+				Customer c = new Customer(bool, custFirstName, 
+										custLastName,  
+										custCity, 
+										custProv, 
+										custEmail);
+				customers.add(c);
+			}
+			return customers;
+					
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	
 	public Customer getCustomer(Integer customerId)
 	{

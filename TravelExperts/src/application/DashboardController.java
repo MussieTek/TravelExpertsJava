@@ -44,6 +44,22 @@ public class DashboardController {
 
     @FXML
     void doLogout(ActionEvent event) {
+    	
+   	 // close dashboard window
+       Stage main = (Stage) btnLogout.getScene().getWindow();
+       main.close();
+   	
+   	try {      
+   		
+	        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Login.fxml"));
+           Parent log = (Parent) fxmlLoader.load();
+           Stage stage = new Stage();
+           stage.setScene(new Scene(log));  
+           stage.show();
+                              
+       } catch(Exception e) {
+          e.printStackTrace();
+       }
 
     }
 

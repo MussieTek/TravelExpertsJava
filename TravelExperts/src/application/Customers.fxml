@@ -66,7 +66,7 @@
                 <TableColumn fx:id="custEmail" editable="false" prefWidth="93.0" text="Email" />
                   <TableColumn fx:id="custPhone" editable="false" prefWidth="112.0" text="Home Phone" />
                   <TableColumn fx:id="custCity" editable="false" prefWidth="122.0" text="City" />
-                  <TableColumn fx:id="sendEmail" editable="true" prefWidth="113.0" text="Action" />
+                  <TableColumn fx:id="sendEmail" editable="true" prefWidth="113.0" text="Send Email" />
               </columns>
             </TableView>
          </children>

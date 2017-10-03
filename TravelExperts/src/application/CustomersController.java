@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+
+
 //import com.mysql.jdbc.Statement;
 
 import Models.DBConnection;
@@ -18,6 +20,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -27,7 +30,17 @@ import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellDataFeatures;
+import javafx.scene.control.Button;
 
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.CheckBoxBuilder;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.util.Callback;
+
+@SuppressWarnings("deprecation")
 public class CustomersController implements Initializable {
 	@FXML
 	private MenuBar fxmenubar;
@@ -188,7 +201,8 @@ public class CustomersController implements Initializable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}			
-    }
+	}
+
 
 	private void loadCustomerList() throws SQLException {
 		// TODO Auto-generated method stub
@@ -209,15 +223,47 @@ public class CustomersController implements Initializable {
 		custEmail.setCellValueFactory(new PropertyValueFactory<>("custEmail"));
 		custPhone.setCellValueFactory(new PropertyValueFactory<>("custHomePhone"));
 		custCity.setCellValueFactory(new PropertyValueFactory<>("custCity"));
-		
-		
 				
-		sendEmail.setCellValueFactory(c -> new SimpleBooleanProperty(c.getValue().getIsDefault())); 
-		sendEmail.setCellFactory(tc -> new CheckBoxTableCell<>());
+		 sendEmail.setCellValueFactory(c -> new SimpleBooleanProperty(c.getValue().getIsDefault())); 
+		 sendEmail.setCellFactory(tc -> new CheckBoxTableCell<>());
 		
-		
+		//Set Sorts
+	    custName.setSortType(TableColumn.SortType.DESCENDING);
+	    custCity.setSortType(TableColumn.SortType.DESCENDING);
+	    custEmail.setSortType(TableColumn.SortType.DESCENDING);
+	    
+	    
+	    // Send Email Column
+	    //TableColumn<Customer, Boolean> sendEmail = new TableColumn<Customer, Boolean>();
+//		sendEmail.setCellValueFactory(new PropertyValueFactory<Customer, Boolean>("selected"));
+//		sendEmail.setCellFactory(new Callback<TableColumn<Customer, Boolean>, TableCell<Customer, Boolean>>() {
+//			public TableCell<Customer, Boolean> call(TableColumn<Customer, Boolean> p) {
+//				final TableCell<Customer, Boolean> cell = new TableCell<Customer, Boolean>() {
+//					@Override
+//					public void updateItem(final Boolean item, boolean empty) {
+//						if (item == null)
+//							return;
+//						super.updateItem(item, empty);
+//						if (!isEmpty()) {
+//							final Customer customer = getTableView().getItems().get(getIndex());
+//							CheckBox checkBox = new CheckBox();
+//							checkBox.selectedProperty().bindBidirectional(customer.selectedProperty());
+//							// checkBox.setOnAction(event);
+//							setGraphic(checkBox);
+//						}
+//					}
+//				};
+//				cell.setAlignment(Pos.CENTER);
+//				return cell;
+//			}
+//		});
+//			
+		custLists.setEditable(true);
 		custLists.setItems(data);
 		
+		
+		
 	}
-   
 }
+
+

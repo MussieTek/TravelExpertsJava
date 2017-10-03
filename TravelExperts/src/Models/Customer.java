@@ -3,6 +3,9 @@
  */
 package Models;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+
 /**
  * @author 758111
  *
@@ -14,6 +17,7 @@ public class Customer implements java.io.Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	private Boolean selected;
 	private Integer customerId;
 	private String custFirstName;
 	private String custLastName;
@@ -30,10 +34,23 @@ public class Customer implements java.io.Serializable {
 
 	public Customer(String custFirstName, String custEmail, String custHomePhone, String custCity) {
 		this.custFirstName = custFirstName;
+		
 		this.custEmail = custEmail;
 		this.custHomePhone = custHomePhone;
 		this.custCity = custCity;
+		//this.selected.set(getIsDefault());;
 		
+	}
+
+	public Customer(Boolean selected, String custFirstName, String custLastName, String custCity,
+			String custProv, String custEmail) {
+		super();
+		this.selected = selected;
+		this.custFirstName = custFirstName;
+		this.custLastName = custLastName;
+		this.custCity = custCity;
+		this.custProv = custProv;
+		this.custEmail = custEmail;
 	}
 
 	public Customer(String custFirstName, String custLastName, String custAddress, String custCity, String custProv,
@@ -46,6 +63,7 @@ public class Customer implements java.io.Serializable {
 		this.custPostal = custPostal;
 		this.custBusPhone = custBusPhone;
 		this.custEmail = custEmail;
+		
 	}
 
 	public Customer(String custFirstName, String custLastName, String custAddress, String custCity, String custProv,
@@ -62,6 +80,7 @@ public class Customer implements java.io.Serializable {
 		this.custBusPhone = custBusPhone;
 		this.custEmail = custEmail;
 		this.agentId = agentId;
+		
 	}
 
 	public Integer getCustomerId() {
@@ -163,6 +182,18 @@ public class Customer implements java.io.Serializable {
 	public boolean getIsDefault() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	public Boolean selectedProperty() {
+		return selected;
+	}
+	
+	public Boolean getSelected() {
+		return selected;
+	}
+
+	public void setSelected(boolean selected) {
+		this.selected = selected;
 	}
 
 }

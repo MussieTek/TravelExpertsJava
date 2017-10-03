@@ -24,9 +24,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.web.HTMLEditor;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.awt.Window;
@@ -103,6 +105,8 @@ public class EmailController implements Initializable {
     
     @FXML
     private static ImageView fxCustomers;
+    
+    private TextField textBox;
     
     //-------------------------Basic menu code
     
@@ -233,6 +237,7 @@ public class EmailController implements Initializable {
 	           e.printStackTrace();
 	        }
 	}
+	
 //------------------------------
 
     @FXML
@@ -278,7 +283,6 @@ public class EmailController implements Initializable {
 
         }
 
-
     }
 
     @FXML
@@ -299,29 +303,15 @@ public class EmailController implements Initializable {
         // send confirmation
     }
     
+    // Method for the "To" button. Gets Customer e mails from a customer email form.
     @FXML
     void getEmails(MouseEvent event) {
-    	openCustomers(event);
     	
-    	
-    }
-//    
-    void openCustomers(MouseEvent event) {
-   	 // close dashboard window
-   	//Stage main = (Stage) btnTo.getScene().getWindow();
-       //main.close();
-       
-   	try {      
-   		
-	       FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Customers.fxml"));
-           Parent cust = (Parent) fxmlLoader.load();
-           Stage stage = new Stage();
-           stage.setScene(new Scene(cust));  
-           stage.show();
-                              
-       } catch(Exception e) {
-          e.printStackTrace();
-       }
+    	CustomerEmailsController dialog = new CustomerEmailsController();
+    	dialog.CreateStage();
+    	String emails = dialog.getEmails();
+    	System.out.println("emails3 " + emails);
+    	txtaEmail.setText(emails);     	
    }
 
     @Override
